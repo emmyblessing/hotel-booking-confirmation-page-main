@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f8f4ed;
+    --paper: #fffdf8;
+    --text: #292621;
+    --muted: #817b72;
+    --orange: #b8441d;
+    --yellow: #f5d66d;
+    --border: #e4ded4;
+}
+
+@font-face {
+    font-family: "DmMono";
+    src: url("../assets/fonts/dm-mono/DMMono-Regular.ttf");
+}
+@font-face {
+    font-family: "DmSans";
+    src: url("../assets/fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
+}
+@font-face {
+    font-family: "Fraunces";
+    src: url("../assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
+}
+
+body{
+    background: var(--background);
+    color: var(--text);
+    font-family: "DmMono", "DmSans";
+}
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+}
+
+.sidebar {
+    border-right: 1px solid var(--border);
+    padding: 25px 16px;
+    position: relative;
+}
+
+.main {
+    padding: 25px 40px;
+    max-width: 1400px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+.name{
+    font-style: italic;
+    color: var(--orange);    
+}
+
+.hotel-name{
+    display: flex;
+}
+
+.hotel-name img{
+    margin-right: 5px;
+}
+
+.logo .btn {
+    padding: 0;
+    
+}
+
+.logo button {
+    outline: none;
+    border: 1px solid var(--muted);
+    background: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+Nav{
+    margin-top: 15px;
+}
+
+Nav .link{
+    text-decoration: none;
+    color: var(--text);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-family: "DmSans";   
+}
+
+.link-count{
+   display: flex;
+   align-items: center;
+   justify-content: space-between; 
+   width: 100%;
+}
+
+.link-count span{
+    background: var(--orange);
+    border-radius: 50%;
+    color: var(--paper);
+    padding: 2px 8px;
+    font-size: 9pt;
+}
+
+.link.active {
+    background: var(--paper);
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.link img{
+    margin-right: 10px;
+}
+
+.weather{
+    position: absolute;
+    bottom: 0;
+    margin: 0 10px 10px 0;
+}
+
+.weather_circle{
+    width: 90px;
+    height: 80px;
+    background: #d69a3f;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: -27px -17px 0 0;
+}
+
+.weather_today{
+    overflow: hidden;
+    position: relative;
+    background: var(--yellow);
+    padding: 15px;
+    border-radius: 15px;
+    font-family: "Fraunces";
+}
+
+.weather_today p{
+    color: var(--text);
+    font-size: 10pt;
+    font-family: "DmSans";
+}
+
+.weather_today b{
+    margin: 15px 0;
+    font-size: 25pt;
+    font-weight: 500;
+}
+
+.year{
+    font-family: "Fraunces";
+    margin-top: 40px;
+    color: var(--muted);
+}
+
+.year p{
+    margin-top: 10px;    
+}
+
+.main{
+    padding: 30px;
+    position: relative;
+}
+
+.booking{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.booking_name p{
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.booking_name h2{
+    font-family: "Fraunces";
+    font-size: 30pt;
+    font-weight: 500;
+}
+
+.booking_name h2 span{
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.booking_receipt button{
+    padding: 6px 12px;
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.booking_receipt .btn-black{
+    background: var(--text);
+    color: var(--paper)
+}
+
+.booking_cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px 100px;
+}
+
+.receipt_card{
+    background: var(--background);
+    border-radius: 16px;
+    box-shadow: 2px 8px 16px #cccccc;
+    padding: 20px;
+    width: 45%;
+    height: 360px;
+    transform: rotate(-4deg);
+}
+
+.receipt_title{
+    display: flex;
+   justify-content: space-between;
+}
+
+.receipt_head span, .receipt_head p{
+    font-family: "Fraunces";
+    color: var(--text);
+}
+
+.receipt_head span{
+    font-size: smaller;
+}
+
+.receipt_head p{
+    margin-top: 5px;
+    font-size: large;
+    font-weight: 600;
+}
+
+.num p{
+    text-align: right;
+    font-size: small;
+    color: var(--muted);
+}
+
+.receipt_card .break_line{
+    text-align: center;
+    border: 1px dotted #cccccc;
+    margin-top: 10px;
+}
+
+.checks{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.checks .check_in_out{
+    font-family: "Fraunces";
+}
+
+.check_in_out span{
+    text-transform: uppercase;
+}
+
+.check_in_out p, .check_in_out span{
+    font-family: "DmSans";
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.check_in_out h1{
+    font-weight: 500;
+    font-size: 20pt;
+    color: var(--text);
+    margin-top: 5px;
+}
+
+.r_contents{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: "DmMono";
+    font-size: 9pt;
+}
+
+.r_contents p{
+    margin-top: 5px;
+}
+
+.r_contents_value{
+    text-align: right;
+}
+
+.receipt_card .line{
+    margin-top: 10px;
+    border: 1.5px solid var(--muted);
+}
+
+.total_contents{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 9pt;
+    align-items: center;
+}
+
+.total_contents p{
+    font-family: "DmMono";
+    color: var(--muted);
+}
+
+.total_contents h1{
+    font-family: "Fraunces";
+    font-weight: 500;
+}
+
+.total_contents img{
+    width: 100px;
+}
+
+/* card solid style starts here */
+.receipt_card_solid{
+    background: var(--orange);
+    border-radius: 16px;
+    box-shadow: 2px 8px 32px var(--orange);
+    padding: 20px;
+    width: 45%;
+    height: 360px;
+    color: var(--paper);
+    transform: rotate(4deg);
+}
+
+.receipt_card_solid p{
+    font-size: 8pt;
+    font-weight: 200;
+}
+
+.note_heading .sun {
+    text-align: right;
+}
+
+.receipt_card_solid .note{
+    font-size: 12pt;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Fraunces";
+    color: var(--yellow);
+}
+
+.receipt_card_solid h1{
+    font-style: italic;
+    font-family: "Times News Roman";
+    font-weight: 400;
+    padding: 10px 2px;
+}
+
+.receipt_card_solid .n_content{
+    margin-top: 10px;
+}
+
+.receipt_card_solid .room{
+    margin-top: 70px;
+}
+
+.receipt_card_solid .room p{
+    font-size: 7pt;
+    font-weight: 100;
+}
+
+.receipt_card_solid h5{
+    font-family: "Fraunces";
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.guest{
+    display: flex;
+    justify-content: space-between;
+}
+
+.guest .arrival, .guest .wifi, .guest .breakfast{
+    background: var(--paper);
+    box-shadow: 2px 3px 6px #cccc cc;
+    border-radius: 15px;
+    padding: 16px;
+    margin: 15px 12px;
+    width: 45%;
+    height: 220px;
+}
+
+.col_2, .col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guest .key, .guest .network, .guest .food{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.guest .key{
+    background: var(--orange);
+}
+
+.guest .network{
+    background: #6200ff;
+}
+
+.guest .food{
+    background: #990367;
+}
+
+.guest .col_2 small{
+    text-transform: uppercase;
+    font-family: "DmSans";
+}
+
+.guest h5{
+    font-family: "Fraunces";
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.arrival .col_2 small, .one{
+    color: var(--orange);    
+}
+
+.wifi .col_2 small, .two{
+    color: #6200ff;
+}
+
+.breakfast .col_2 small, .three{
+    color: #990367;
+}
+
+.guest .details{
+    margin: 18px 0 12px 0;
+}
+
+.details small{
+    margin-top: 15px 0;
+    font-size: 9pt;
+    font-family: "DmSans";
+}
+
+.details p{
+    font-size: 9pt;
+    margin-top: 10px;
+    font-size: "DmMono";
+}
+
+.col .login{
+    text-transform: uppercase;
+    font-family: "DmSans";
+    font-size: 9pt;
+}
+
+.wifi .col{
+    background: var(--background);
+    margin-top: 5px;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.attribution{
+    background: var(--orange);
+    color: var(--paper);
+    padding: 30px;
+    text-align: center;
+}
+
+.attribution a{
+    color: var(--paper)
+}
