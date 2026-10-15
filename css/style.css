@@ -569,7 +569,7 @@ Nav .link{
 
     .booking{
         display: block;
-        padding: 10px;
+        padding: 6px;
     }
 
     .booking_receipt{
@@ -577,7 +577,7 @@ Nav .link{
     }
 
     .booking_receipt button{
-        padding: 12px 36px;
+        padding: 12px 30px;
     }
 
     .booking_cards{
