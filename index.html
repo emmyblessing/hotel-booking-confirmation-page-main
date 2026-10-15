@@ -12,10 +12,27 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 <body>
+  <header class="mobile-header">
+    <div class="logo"> 
+      <div class="hotel-name">
+        <img alt="SUN" src="./assets/images/icon-sun.svg"/>
+        <div>
+          <h3 class="name">Maison</h3>
+          <h3>Soleil</h3>
+        </div> 
+      </div>
+      <div class="btn-menu">
+        <button type="button" id="menuBtn">
+          <img alt="MENU" src="./assets/images/icon-menu.svg" class="toggle-icon"/>          
+        </button>
+      </div>
+    </div>
+  </header>
+  
   <div class="app">
     <!-- Sidebar starts -->
-    <div class="sidebar">
-      <header class="mobile-header">
+    <div class="sidebar" id="sidebar">
+      <header class="header">
         <div class="logo"> 
           <div class="hotel-name">
             <img alt="SUN" src="./assets/images/icon-sun.svg"/>
@@ -24,14 +41,8 @@
               <h3>Soleil</h3>
             </div> 
           </div>
-          <div class="btn">
-            <button>
-              <img alt="SUN" src="./assets/images/icon-menu.svg"/>          
-            </button>
-          </div>
         </div>
       </header>
-
       <!-- Guest navigation -->
       <Nav>
         <a href="#" class="link active">
@@ -87,7 +98,8 @@
         </div>
         <div class="year">
           <p>Est. 1987</p>
-          <p>Maison Soleil · 12 Rue des Oliviers · Cassis</p>
+          <p>Maison Soleil · 12 Rue des
+            OLIVIERS . CASSIS </p>
           <p>© 2026 Maison Soleil</p>
         </div>
       </div>
@@ -176,7 +188,7 @@
 
 
         <!-- Note from host card -->
-        <div class="receipt_card_solid">
+        <div class="receipt_card receipt_card_solid">
           <div class="note_heading">
             <p>WELCOME CARD</p>
             <div class="sun">
@@ -281,5 +293,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="https://github.com/emmyblessing">Emmanuel Olawole</a>.
   </footer>
+
+  <script type="text/javaScript" src="script.js"></script>
 </body>
 </html>

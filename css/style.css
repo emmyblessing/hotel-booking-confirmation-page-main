@@ -18,10 +18,12 @@
     font-family: "DmMono";
     src: url("../assets/fonts/dm-mono/DMMono-Regular.ttf");
 }
+
 @font-face {
     font-family: "DmSans";
     src: url("../assets/fonts/dm-sans/DMSans-VariableFont_opsz\,wght.ttf");
 }
+
 @font-face {
     font-family: "Fraunces";
     src: url("../assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
@@ -34,20 +36,24 @@ body{
 }
 
 .app {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 270px 1fr;
+    display: flex;
+}
+
+.mobile-header{
+    display: none;
 }
 
 .sidebar {
     border-right: 1px solid var(--border);
     padding: 25px 16px;
-    position: relative;
+    width: 280px;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
 }
 
 .main {
     padding: 25px 40px;
-    max-width: 1400px;
 }
 
 .logo {
@@ -70,7 +76,7 @@ body{
     margin-right: 5px;
 }
 
-.logo .btn {
+.logo .btn-menu {
     padding: 0;
     
 }
@@ -81,7 +87,6 @@ body{
     background: none;
     padding: 8px 10px;
     border-radius: 5px;
-    visibility: hidden;
 }
 
 Nav{
@@ -110,6 +115,15 @@ Nav .link{
     color: var(--paper);
     padding: 2px 8px;
     font-size: 9pt;
+}
+
+.link:hover, .link:focus{
+   background: var(--paper); 
+   border-radius: 10px;
+}
+
+.link:focus{
+    border: 1px solid var(--orange)
 }
 
 .link.active {
@@ -173,6 +187,7 @@ Nav .link{
 .main{
     padding: 30px;
     position: relative;
+    margin-left: 270px;
 }
 
 .booking{
@@ -206,6 +221,12 @@ Nav .link{
     border: 1px solid var(--border);
     border-radius: 20px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.booking_receipt button:hover, .booking_receipt button:hover{
+    border-radius: 20px;
+    outline: 2px solid var(--orange);
 }
 
 .booking_receipt .btn-black{
@@ -341,11 +362,7 @@ Nav .link{
 /* card solid style starts here */
 .receipt_card_solid{
     background: var(--orange);
-    border-radius: 16px;
     box-shadow: 2px 8px 32px var(--orange);
-    padding: 20px;
-    width: 45%;
-    height: 360px;
     color: var(--paper);
     transform: rotate(4deg);
 }
@@ -455,6 +472,15 @@ Nav .link{
     color: #6200ff;
 }
 
+.wifi span{
+    background: #ccc;
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .breakfast .col_2 small, .three{
     color: #990367;
 }
@@ -497,4 +523,77 @@ Nav .link{
 
 .attribution a{
     color: var(--paper)
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar{
+        transform: translateX(-100%);
+        background-color: var(--background); 
+        width: 390px;
+        height: 100%;
+        border: none;
+        padding-top: 5px;
+        position: absolute;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-close{
+        display: none;
+    }
+
+    .sidebar.open{
+        transform: translateX(0);
+    }
+
+    .logo{
+        padding: 20px;
+    }
+
+    .mobile-header, .guest {
+        display: block;
+    }
+    
+    .sidebar .header {
+        display: none;
+    }
+
+    .main{
+        padding: 10px;
+        margin-left: 2px;
+    }
+
+    .booking{
+        display: block;
+        padding: 10px;
+    }
+
+    .booking_receipt{
+        margin-top: 15px;
+    }
+
+    .booking_receipt button{
+        padding: 12px 36px;
+    }
+
+    .booking_cards{
+        padding: 20px;
+        flex-direction: column-reverse;
+    }
+
+    .receipt_card, .receipt_card_solid{
+        width: 100%;
+    }
+
+    .receipt_card{
+        margin-top: 10px;
+    }
+
+    .guest .arrival, .guest .wifi, .guest .breakfast{
+        width: 95%;
+    }
 }
